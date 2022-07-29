@@ -1,92 +1,126 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Oleksandr Nesterenko v2</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- <script src="https://kit.fontawesome.com/e1b4e19bb3.js" crossorigin="anonymous"></script> -->
-</head>
-<body>
-
-  <!--navigation-->
-<section class="first-section">
-  <nav>
-    <div class="navigation-title">
-      <p>Front-end developer / Remote</p>
-    </div>
-    <ul class="navigation-items">
-      <li class="navigation-item"><a href="#about-me">Expirience</a></li>
-      <li class="navigation-item"><a href="#projects">Skills</a></li>
-      <li class="navigation-item"><a href="#skills">Education</a></li>
-      <li class="navigation-item"><a href="#skills">Projects</a></li>
-      <li class="navigation-item"><a href="#contacts">Contacts</a></li>
-    </ul>
-  </nav>
-
-    <!--hamburger menu-->
-
-<label class="hamburger-menu">
-  <input type="checkbox">
-  <span class="menu"> <span class="hamburger"></span> </span>
-  <ul>
-    <li>
-      <a href="#projects"><i class="fa-solid fa-0"></i>. Projects</a>
-    </li>
-    <li>
-      <a href="#skills"><i class="fa-solid fa-1"></i>. Skills</a>
-    </li>
-    <li>
-      <a href="#contacts"><i class="fa-solid fa-2"></i>. Contacts</a>
-    </li>
-  </ul>
-  </label>
-  
-  <!--rotating text-->
-  
-  <div id="rotating-container">
-    <div id="circle">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-        <defs>
-          <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
-        </defs>
-        <circle cx="150" cy="100" r="75" fill="none"/>
-          <g>
-            <use xlink:href="#circlePath" fill="none"/>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Oleksandr Nesterenko v2</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <script src="https://kit.fontawesome.com/e1b4e19bb3.js" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <!--navigation-->
+    <section class="first-section">
+      <nav>
+        <div class="navigation-title">
+          <p>Front-end developer / Remote</p>
+        </div>
+        <ul class="navigation-items">
+          <li class="navigation-item"><a href="#about-me">Expirience</a></li>
+          <li class="navigation-item"><a href="#projects">Skills</a></li>
+          <li class="navigation-item"><a href="#skills">Education</a></li>
+          <li class="navigation-item"><a href="#skills">Projects</a></li>
+          <li class="navigation-item"><a href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+      <!--hamburger menu-->
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+        <span class="menu"> <span class="hamburger"></span> </span>
+        <ul>
+          <li>
+            <a href="#projects"><i class="fa-solid fa-0"></i>. Projects</a>
+          </li>
+          <li>
+            <a href="#skills"><i class="fa-solid fa-1"></i>. Skills</a>
+          </li>
+          <li>
+            <a href="#contacts"><i class="fa-solid fa-2"></i>. Contacts</a>
+          </li>
+        </ul>
+      </label>
+      <!--rotating text-->
+      <div id="rotating-container">
+        <div id="circle">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="300px"
+            height="300px"
+            viewBox="0 0 300 300"
+            enable-background="new 0 0 300 300"
+            xml:space="preserve"
+          >
+            <defs>
+              <path
+                id="circlePath"
+                d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+              />
+            </defs>
+            <circle cx="150" cy="100" r="75" fill="none" />
+            <g>
+              <use xlink:href="#circlePath" fill="none" />
               <text fill="#2960ED">
-                  <textPath xlink:href="#circlePath">NEW OPPORTUNITY CV| NEW OPPORTUNITY CV| NEW OPPORTUNITY CV| </textPath>
+                <textPath xlink:href="#circlePath">
+                  NEW OPPORTUNITY CV| NEW OPPORTUNITY CV| NEW OPPORTUNITY CV|
+                </textPath>
               </text>
-          </g>
-      </svg>
-      <img src="imgs/me.jpg" id="me-img"/>
-    </div>
-  </div>
-
-  
-</div>
-  
-
- 
-    
-  <!--main content-->
-
-  <main>
-    <section id="about-me">
-      <div class="about-me-container">
-        <div class="about-me-text-container">
-      
+            </g>
+          </svg>
+          <img src="imgs/me.jpg" id="me-img" />
+        </div>
       </div>
-      
+
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-left">
+            <p>Oleksandr Nesterenko</p>
+          </div>
+          <div class="about-me-text-right">
+            <p>
+              I`m a highly motivated person who doesn`t afraid of facing
+              challenging tasks.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
-    <!-- <section id="expirince">
-      <div class="about-me-container">
-        <div class="about-me-text-container">
-          <h2>Expirience</h2>
-          <p><b><u>Energy Soft</u></b>, Feb 2019 - Aug 2019 Was responsible for creating user friendly UIs and providing responsive design. Developed more than 13 projects (landing pages and web applications) for customers during 7 months. Technology stack: HTML5, CSS3, SCSS, Angular 6, Bootstrap.</p>
-          <p><b><u>Infopulse</u></b>, Oct 2019 -  March 2021. Create web applications and landing pages based on CMS system for pharma company. Technologies: HTM5, CSS3, Vanilla JS</p>
-          <p><b><u>Playtech</u></b>, May 2021 - present. Support gambling  web applications, change functionality and redesign. Technologies: HTM5, Less, Vanilla JS, Gulp, Jenkins.</p>
-      </div>
-      
-    </section> -->
-    <!-- <section id="education">
+    <!--main content-->
+    <main>
+      <section id="expirince">
+        <div class="expirince-container">
+          <div class="expirince-container-left">
+            <h2>Expirience</h2>
+          </div>
+          <div class="expirince-container-right">
+            <div class="expirince-container-first">
+              <p>
+                <b><u>Energy Soft</u></b
+                >, Was responsible for creating user friendly UIs and providing
+                responsive design. Developed more than 13 projects (landing
+                pages and web applications) for customers during 7 months.
+                Technology stack: HTML5, CSS3, SCSS, Angular 6, Bootstrap.
+              </p>
+            </div>
+            <div class="expirince-container-second">Feb 2019 - Aug 2019</div>
+            <!-- <p>
+              <b><u>Infopulse</u></b
+              >, Oct 2019 - March 2021. Create web applications and landing
+              pages based on CMS system for pharma company. Technologies: HTM5,
+              CSS3, Vanilla JS
+            </p>
+            <p>
+              <b><u>Playtech</u></b
+              >, May 2021 - present. Support gambling web applications, change
+              functionality and redesign. Technologies: HTM5, Less, Vanilla JS,
+              Gulp, Jenkins.
+            </p> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="education">
       <div class="education-container">
         <div class="education-text-container">
           <h2>Education</h2>
@@ -139,15 +173,15 @@
         <a href="mailto:stan0men@yahoo.com" target="_blank"><i class="fa fa-envelope-square" aria-hidden="true" title="Email"></i></a>
       </div>
     </section> -->
-  </main>
+    </main>
 
-  <!--to the top button-->
+    <!--to the top button-->
 
-  <button class="btn"></button>
+    <button class="btn"></button>
 
-  <!--footer-->
+    <!--footer-->
 
-  <!-- <footer>Made with <i class="fa fa-heart heart"></i> in Ukraine</footer> -->
-  <script src="script.js"></script>
-</body>
+    <!-- <footer>Made with <i class="fa fa-heart heart"></i> in Ukraine</footer> -->
+    <script src="script.js"></script>
+  </body>
 </html>
