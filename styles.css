@@ -22,6 +22,7 @@ body {
 
 :root {
   --grey-color: #f5f5f5;
+  --grey-color-2: #868684;
   --blue-color: #2960ed;
 }
 
@@ -228,7 +229,7 @@ nav {
 
 /*main content*/
 main {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .expirince-container {
@@ -236,6 +237,7 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .expirince-container-left {
@@ -247,6 +249,40 @@ main {
   font-size: 22px;
   flex-basis: 50%;
   display: flex;
+  border-bottom: 1px solid;
+}
+
+.company {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+
+.company-title {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.company-date,
+.tech-stack-text,
+.responsibilities-text {
+  font-size: 20px;
+}
+
+.tech-stack {
+  margin-bottom: 25px;
+}
+
+.tech-stack-title,
+.responsibilities-title {
+  color: var(--grey-color-2);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.responsibilities {
+  margin-bottom: 25px;
 }
 
 /*to the top button*/
