@@ -6,7 +6,9 @@
 }
 
 /* common */
-
+i {
+  color: red;
+}
 *,
 *:before,
 *:after {
@@ -54,13 +56,13 @@ ul {
   list-style-type: none;
 }
 
-.first-section,
-.third-section,
-.fifth-section {
+.title-section,
+.skills-section,
+.education-section {
   background-color: var(--grey-color);
 }
 
-/* first section */
+/* title section */
 
 nav {
   display: flex;
@@ -227,10 +229,11 @@ nav {
   flex-basis: 50%;
 }
 
-/*main content*/
 main {
   padding-top: 50px;
 }
+
+/*expirience section*/
 
 .expirince-container {
   width: 90%;
@@ -243,6 +246,7 @@ main {
 .expirince-container-left {
   font-size: 42px;
   flex-basis: 50%;
+  line-height: 30px;
 }
 
 .expirince-container-right {
@@ -283,6 +287,21 @@ main {
 
 .responsibilities {
   margin-bottom: 25px;
+}
+
+/*skills section*/
+
+.skills-section {
+  margin-top: 50px;
+  padding: 70px;
+}
+
+.skills-container,
+.skills-title-container {
+  width: 90%;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*to the top button*/
