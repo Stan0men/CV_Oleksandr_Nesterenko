@@ -6,9 +6,6 @@
 }
 
 /* common */
-i {
-  color: red;
-}
 *,
 *:before,
 *:after {
@@ -36,7 +33,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: NeueHaasGroteskDisplay;
-  outline: 1px solid red;
 }
 
 a {
@@ -56,10 +52,14 @@ ul {
   list-style-type: none;
 }
 
-.title-section,
-.skills-section,
-.education-section {
+.title,
+.skills,
+.education {
   background-color: var(--grey-color);
+}
+
+h2 {
+  font-size: 54px;
 }
 
 /* title section */
@@ -296,6 +296,10 @@ main {
   padding: 70px;
 }
 
+.skills-section-title {
+  font-size: 48px;
+}
+
 .skills-container,
 .skills-title-container {
   width: 90%;
@@ -304,9 +308,52 @@ main {
   justify-content: space-between;
 }
 
+.skills-container-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-container-item svg {
+  width: 100px;
+  stroke: var(--blue-color);
+}
+
+.skills-container-item span {
+  font-size: 22px;
+}
+
+/*projects section*/
+
+.projects-container {
+  width: 90%;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-container-item {
+  width: 30%;
+}
+
+.projects-container-item img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.projects-container-item-title,
+.projects-container-item-text {
+  margin-bottom: 20px;
+}
+
+.projects-container-item a {
+  display: flex;
+  align-items: baseline;
+}
+
 /*to the top button*/
 
-button {
+.btn {
   display: none;
   cursor: pointer;
   position: fixed;
@@ -321,7 +368,7 @@ button {
   border: none;
 }
 
-button:after {
+.btn {
   content: '';
   display: inline-block;
   margin-top: 7px;
