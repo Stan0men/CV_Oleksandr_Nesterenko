@@ -67,10 +67,9 @@ h2 {
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 70px auto 0;
+  margin: 60px auto 0;
   width: 90%;
   font-size: 24px;
-  line-height: 27px;
 }
 
 .navigation-title {
@@ -86,6 +85,41 @@ nav {
 
 .navigation-item {
   margin-right: 15px;
+}
+
+.navigation-item a {
+  position: relative;
+  display: block;
+}
+
+.navigation-item a:hover {
+  color: #000000;
+}
+
+.navigation-item a:after {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  content: '';
+  opacity: 0;
+  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.navigation-item a:hover:after,
+.navigation-item a:focus:after {
+  height: 3px;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .navigation-item:last-child {
@@ -216,6 +250,9 @@ nav {
 .about-me-container {
   display: flex;
   justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 .about-me-text-left {
@@ -240,7 +277,6 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 .expirince-container-left {
@@ -303,9 +339,15 @@ main {
 .skills-container,
 .skills-title-container {
   width: 90%;
-  margin: 70px auto;
+  margin: 60px auto 0;
   display: flex;
   justify-content: space-between;
+}
+
+.skills-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
 .skills-container-item {
@@ -325,6 +367,10 @@ main {
 
 /*projects section*/
 
+.projects {
+  width: 90%;
+  margin: 60px auto;
+}
 .projects-container {
   width: 90%;
   margin: 70px auto;
@@ -338,6 +384,7 @@ main {
 
 .projects-container-item img {
   width: 200px;
+  height: 100px;
   margin-bottom: 20px;
 }
 
@@ -349,6 +396,14 @@ main {
 .projects-container-item a {
   display: flex;
   align-items: baseline;
+}
+
+/*education*/
+.education-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /*to the top button*/
