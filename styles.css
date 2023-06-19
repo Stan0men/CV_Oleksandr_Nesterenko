@@ -435,7 +435,11 @@ main {
 .education-container-text-title {
   display: block;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 30px;
+}
+
+.education-container-text-date {
+  margin: 10px 0;
 }
 
 .education-container-img {
@@ -450,6 +454,41 @@ main {
 .nuft {
   width: 70px;
   height: 55px;
+}
+
+/*contacts*/
+.contacts {
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+}
+
+.contacts-container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.contacts-container-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.contacts-container-right {
+  display: flex;
+  width: 50%;
+}
+
+.contacts-container-right-first,
+.contacts-container-right-second {
+  width: 50%;
+}
+
+.contacts-slogan {
+  text-align: center;
 }
 /*to the top button*/
 
