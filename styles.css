@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: NeueHaasGroteskDisplay;
-  src: url('./fonts/NeueHaasGroteskDisplay-Light.otf') format('opentype');
+  src: url("./fonts/NeueHaasGroteskDisplay-Light.otf") format("opentype");
 }
 
 /* common */
@@ -103,7 +103,7 @@ nav {
   width: 100%;
   height: 1px;
   background: #000000;
-  content: '';
+  content: "";
   opacity: 0;
   -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
   -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
@@ -338,7 +338,6 @@ main {
 
 .skills-container,
 .skills-title-container {
-  width: 90%;
   margin: 60px auto 0;
   display: flex;
   justify-content: space-between;
@@ -372,7 +371,6 @@ main {
   margin: 60px auto;
 }
 .projects-container {
-  width: 90%;
   margin: 70px auto;
   display: flex;
   justify-content: space-between;
@@ -399,13 +397,60 @@ main {
 }
 
 /*education*/
+
 .education-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 60px 0;
   width: 90%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 }
 
+.education-container-title {
+  display: block;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.education-container-right,
+.education-container-left {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.education-container-right {
+  padding-left: 50px;
+}
+
+.education-container-text {
+  width: 70%;
+}
+
+.education-container-img {
+  width: 30%;
+}
+
+.education-container-text-title {
+  display: block;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.education-container-img {
+  display: flex;
+  justify-content: end;
+}
+
+.mate_academy {
+  width: 150px;
+  height: 45px;
+}
+.nuft {
+  width: 70px;
+  height: 55px;
+}
 /*to the top button*/
 
 .btn {
@@ -424,7 +469,7 @@ main {
 }
 
 .btn {
-  content: '';
+  content: "";
   display: inline-block;
   margin-top: 7px;
   width: 1.4em;
@@ -477,7 +522,7 @@ main {
   label .hamburger:before {
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     width: 100%;
