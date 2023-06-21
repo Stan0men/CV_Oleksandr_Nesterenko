@@ -96,17 +96,13 @@ nav {
   display: block;
 }
 
-.navigation-item a:hover {
-  color: #000000;
-}
-
 .navigation-item a:after {
   position: absolute;
   top: 120%;
   left: 0;
   width: 100%;
   height: 1px;
-  background: #000000;
+  background: var(--blue-color);
   content: "";
   opacity: 0;
   -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
@@ -248,7 +244,7 @@ nav {
 #about-me {
   width: 90%;
   margin: 0 auto;
-  padding-bottom: 120px;
+  padding: 60px 0;
 }
 
 .about-me-container {
@@ -275,21 +271,24 @@ main {
 }
 
 /*expirience section*/
+.expirience {
+  padding: 60px 0;
+}
 
-.expirince-container {
+.experience-container {
   width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 
-.expirince-container-left {
+.experience-container-left {
   font-size: 42px;
   flex-basis: 50%;
   line-height: 30px;
 }
 
-.expirince-container-right {
+.experience-container-right {
   font-size: 22px;
   flex-basis: 50%;
   display: flex;
@@ -401,12 +400,14 @@ main {
 }
 
 /*education*/
+.education {
+  padding: 60px 0;
+}
 
 .education-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 60px 0;
   width: 90%;
   margin: 0 auto;
 }
@@ -467,7 +468,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #000000;
-  padding-bottom: 50px;
+  padding: 60px 0;
 }
 
 .contacts-container {
@@ -532,35 +533,21 @@ main {
 }
 /*to the top button*/
 
-.btn {
-  display: none;
-  cursor: pointer;
+.back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: var(--font-color);
-  color: white;
-  border: none;
+  text-align: center;
+  line-height: 40px;
+  background: var(--blue-color);
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s;
 }
-
-.btn {
-  content: "";
-  display: inline-block;
-  margin-top: 7px;
-  width: 1.4em;
-  height: 1.4em;
-  border-top: 0.5em solid #fff;
-  border-right: 0.5em solid #fff;
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-/* footer */
 
 /* mobile */
 @media only screen and (max-width: 600px) {

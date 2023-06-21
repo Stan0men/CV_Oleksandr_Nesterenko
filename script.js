@@ -1,24 +1,16 @@
-const button = document.querySelector('.btn');
+let backToTopButton = document.querySelector(".back-to-top");
 
-const displayButton = () => {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      button.style.display = 'block';
-    } else {
-      button.style.display = 'none';
-    }
-  });
+window.onscroll = function () {
+  scrollFunction();
 };
 
-const scrollToTop = () => {
-  button.addEventListener('click', () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  });
-};
-
-displayButton();
-scrollToTop();
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 400 ||
+    document.documentElement.scrollTop > 400
+  ) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+}
