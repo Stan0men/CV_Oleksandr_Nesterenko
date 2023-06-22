@@ -241,7 +241,7 @@ nav {
   border-radius: 50%;
 }
 
-#about-me {
+.about-me {
   width: 90%;
   margin: 0 auto;
   padding: 60px 0;
@@ -531,6 +531,7 @@ main {
   text-align: center;
   color: var(--blue-color);
 }
+
 /*to the top button*/
 
 .back-to-top {
@@ -550,108 +551,254 @@ main {
 }
 
 /* mobile */
-@media only screen and (max-width: 600px) {
-  /* burger menu */
-  .hamburger-menu {
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  max-width: 300px;
+  height: calc(100vh - 200px);
+  background-color: #333;
+  padding-top: 60px;
+  text-align: center;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.menu.open {
+  display: block; /* Show the menu items when the hamburger menu is clicked */
+  transform: translateX(0%); /* Move the menu onto the screen when open */
+}
+
+.menu li {
+  opacity: 0; /* Initially hide the menu items */
+  transition: opacity 0.3s ease-in-out; /* Add transition property */
+}
+
+.menu.open li {
+  opacity: 1; /* Fade in the menu items when menu is open */
+}
+
+.menu a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: block; /* Show the hamburger menu for mobile devices */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
     display: block;
   }
 
-  label .menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 100;
-    width: 100px;
-    height: 100px;
-    border-radius: 0 0 0 100px;
-    background: #fff;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
-  }
-
-  label .hamburger {
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    width: 30px;
-    height: 2px;
-    background: var(--font-color);
-    display: block;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-  }
-
-  label .hamburger:after,
-  label .hamburger:before {
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: var(--font-color);
-  }
-
-  label .hamburger:before {
-    top: -10px;
-  }
-
-  label .hamburger:after {
-    bottom: -10px;
-  }
-
-  label input {
+  .navigation-items,
+  input[type="checkbox"] {
     display: none;
   }
 
-  label input:checked + .menu {
-    box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
-    border-radius: 0;
+  .navigation-title {
+    flex-basis: 100%;
+    text-align: center;
   }
 
-  label input:checked + .menu .hamburger {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+  #circle > svg {
+    display: none;
   }
 
-  label input:checked + .menu .hamburger:after {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    bottom: 0;
+  nav {
+    margin: 40px auto 0;
   }
 
-  label input:checked + .menu .hamburger:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
+  h2 {
+    font-size: 30px;
+  }
+  .navigation-title h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
-  label input:checked + .menu + ul {
-    opacity: 1;
+  .company-title {
+    font-size: 24px;
   }
 
-  label ul {
-    z-index: 200;
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    -webkit-transition: 0.25s 0s ease-in-out;
-    transition: 0.25s 0s ease-in-out;
-  }
-  .hamburger-menu ul {
-    list-style: none;
+  main {
+    padding-top: 20px;
   }
 
-  label ul li a {
-    margin-bottom: 1em;
-    display: block;
-    color: var(--font-color);
+  .about-me-container {
+    padding: 0;
+    text-align: center;
+  }
+
+  .about-me-text-left {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .about-me-container,
+  .experience-container,
+  .projects-container,
+  .education-container,
+  .contacts-container {
+    flex-direction: column;
+  }
+
+  .about-me,
+  .skills-wrapper,
+  .projects,
+  .contacts,
+  .contacts-container {
+    padding: 20px 0;
+  }
+
+  .projects {
+    margin: 0 auto;
+  }
+
+  .projects-container-item {
+    width: 100%;
+  }
+
+  .projects-container-item img {
+    width: 100%;
+    max-width: 450px;
+    height: 25vh;
+  }
+
+  .skills-container {
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .experience {
+    padding: 0 0 20px 0;
+  }
+
+  .experience-container-left {
+    margin-bottom: 40px;
+  }
+
+  .skills-container-item {
+    width: 100%;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .skills-container > div {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+
+  .projects-container-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+  }
+
+  .education-container-left {
+    margin-bottom: 20px;
+  }
+
+  .education-container-right {
+    padding-left: 0;
+  }
+
+  .education-container-left,
+  .education-container-right {
+    width: 100%;
+  }
+
+  .education-container-text-title {
+    font-size: 22px;
+  }
+
+  .contacts-container-right {
+    width: 100%;
+  }
+
+  .contacts-container-left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .contacts-container-right-first,
+  .contacts-container-right-second {
+    text-align: center;
+  }
+
+  .back-to-top {
+    display: none !important;
   }
 }
+
+/*
+To do:
+-fix navbar and anchors on mobile
+-add close button to navbar
+-add hover effect for project links
+-gradient color when user scrolling down?
+*/
