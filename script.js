@@ -1,14 +1,9 @@
 //hamburger menu
 
-window.onload = function () {
-  var menuToggle = document.querySelector(".menu-toggle");
+function toggleMenu() {
   var menu = document.querySelector(".menu");
-
-  menuToggle.addEventListener("click", function () {
-    this.classList.toggle("open");
-    menu.classList.toggle("open");
-  });
-};
+  menu.classList.toggle("show");
+}
 
 //back to top button
 

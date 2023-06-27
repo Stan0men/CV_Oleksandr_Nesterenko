@@ -10,20 +10,26 @@
     />
   </head>
   <body>
+    <!--mobile menu-->
+
     <header>
-      <div class="menu-toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+      <div class="navbar">
+        <div class="navbar-toggle" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <nav class="menu">
+          <a href="#experience">Expirience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contacts">Contacts</a>
+          <div class="close-btn" onclick="toggleMenu()">&#10005;</div>
+        </nav>
       </div>
     </header>
+
     <!--title section-->
 
     <section class="title" id="title">
@@ -33,40 +39,22 @@
         </div>
         <ul class="navigation-items">
           <li class="navigation-item">
-            <a class="navigation-item-link" href="#about-me">Expirience</a>
+            <a class="navigation-item-link" href="#experience">Expirience</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-item-link" href="#skills">Skills</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-item-link" href="#education">Education</a>
+            <a class="navigation-item-link" href="#projects">Projects</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-item-link" href="#projects">Projects</a>
+            <a class="navigation-item-link" href="#education">Education</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-item-link" href="#contacts">Contacts</a>
           </li>
         </ul>
       </nav>
-
-      <!--hamburger menu-->
-
-      <label class="hamburger-menu">
-        <input type="checkbox" />
-        <span class="menu"> <span class="hamburger"></span> </span>
-        <ul>
-          <li>
-            <a href="#projects"><i class="fa-solid fa-0"></i>. Projects</a>
-          </li>
-          <li>
-            <a href="#skills"><i class="fa-solid fa-1"></i>. Skills</a>
-          </li>
-          <li>
-            <a href="#contacts"><i class="fa-solid fa-2"></i>. Contacts</a>
-          </li>
-        </ul>
-      </label>
 
       <!--rotating text-->
 
@@ -489,9 +477,6 @@
 
     <a href="#title" class="back-to-top" title="Up">&uarr;</a>
 
-    <!--footer-->
-
-    <!-- <footer>Made with <i class="fa fa-heart heart"></i> in Ukraine</footer> -->
     <script src="script.js"></script>
   </body>
 </html>
