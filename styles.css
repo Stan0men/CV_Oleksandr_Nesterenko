@@ -21,12 +21,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-  /* background: rgb(0, 86, 184);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 86, 184, 1) 49%,
-    rgba(255, 216, 0, 1) 50%
-  ); */
 }
 
 :root {
@@ -36,7 +30,7 @@ html {
 }
 
 body {
-  max-width: 900px;
+  max-width: 90vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -50,7 +44,7 @@ a {
 }
 
 .navigation-item-link:visited {
-  color: #000;
+  color: #ffffff;
 }
 
 a.navigation-item-link:hover {
@@ -62,10 +56,8 @@ ul {
   list-style-type: none;
 }
 
-.title,
-.skills,
-.education {
-  background-color: var(--grey-color);
+.title {
+  background-color: #000000;
 }
 
 h2 {
@@ -81,18 +73,12 @@ h2 {
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 60px auto 0;
+  margin: 60px auto 60px;
+  padding: 0 20px;
   width: 90%;
-  font-size: 24px;
-}
-
-.navigation-title {
-  flex-basis: 50%;
-  flex-shrink: 1;
-}
-
-.navigation-title > h2 {
-  font-size: 24px;
+  font-size: 1.5em;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .navigation-items {
@@ -109,7 +95,7 @@ nav {
 .navigation-item a {
   position: relative;
   display: block;
-  color: #000000;
+  color: #ffffff;
 }
 
 .navigation-item a:after {
@@ -146,139 +132,45 @@ nav {
   display: none;
 }
 
-/* rotating text */
-#rotating-container {
-  position: relative;
-}
-
-#circle {
-  position: relative;
+.about-me,
+.about-me-second {
   width: 100%;
-  padding-bottom: 50%;
-  overflow: hidden;
-}
-
-#circle text {
-  font-size: 12px;
-  color: var(--blue-color);
-  line-height: 21px;
-}
-
-#circle svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 460px;
-  -webkit-animation-name: rotate;
-  -moz-animation-name: rotate;
-  -ms-animation-name: rotate;
-  -o-animation-name: rotate;
-  animation-name: rotate;
-  -webkit-animation-duration: 30s;
-  -moz-animation-duration: 30s;
-  -ms-animation-duration: 30s;
-  -o-animation-duration: 30s;
-  animation-duration: 30s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -ms-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes rotate {
-  from {
-    -moz-transform: rotate(0);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-ms-keyframes rotate {
-  from {
-    -ms-transform: rotate(0);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-
-@-o-keyframes rotate {
-  from {
-    -o-transform: rotate(0);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#img {
-  @keyframes rotate {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(0);
-    }
-  }
-}
-#me-img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 150px;
-  margin: auto;
-  border-radius: 50%;
-}
-
-.about-me {
-  width: 90%;
   margin: 0 auto;
   padding: 60px 0;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .about-me-container {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 10px 0;
+  flex-direction: column;
+  width: 45%;
+  padding: 10px 20px;
 }
 
-.about-me-text-left {
-  font-style: italic;
-  font-size: 36px;
-  flex-basis: 50%;
+.about-me-container > h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
 
-.about-me-text-right {
-  font-size: 22px;
-  flex-basis: 50%;
+/*about me second section*/
+
+.about-me-second {
+  display: flex;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0 0;
+}
+
+.about-me-left,
+.about-me-right {
+  width: 50%;
+}
+
+.about-me-right img {
+  width: 100%;
+  height: auto;
 }
 
 main {
