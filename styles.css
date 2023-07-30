@@ -26,7 +26,7 @@ html {
 :root {
   --grey-color: #f5f5f5;
   --grey-color-2: #868684;
-  --blue-color: #2960ed;
+  --purple-color: #af9fff;
 }
 
 body {
@@ -178,8 +178,14 @@ main {
 }
 
 /*expirience section*/
-.expirience {
+.experience {
   padding: 60px 0;
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+.experience-title {
+  text-align: center;
 }
 
 .experience-container {
@@ -189,29 +195,48 @@ main {
   justify-content: space-between;
 }
 
-.experience-container-left {
-  font-size: 42px;
-  flex-basis: 50%;
-  line-height: 30px;
+.row {
+  display: flex;
+  padding: 0 50px;
+  margin-bottom: 30px;
 }
 
 .experience-container-right {
   font-size: 22px;
-  flex-basis: 50%;
+  flex-basis: 100%;
   display: flex;
   border-bottom: 1px solid;
 }
 
+.tech-stack,
+.responsibilities {
+  display: flex;
+  flex-direction: column;
+}
 .company {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: baseline;
   margin-bottom: 25px;
+  flex-basis: 50%;
+}
+
+.job-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-basis: 50%;
+  background-color: #af9fff;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 .company-title {
   font-weight: bold;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .company-date,
@@ -267,7 +292,7 @@ main {
 
 .skills-container-item svg {
   width: 100px;
-  stroke: var(--blue-color);
+  stroke: var(--purple-color);
 }
 
 .skills-container-item span {
