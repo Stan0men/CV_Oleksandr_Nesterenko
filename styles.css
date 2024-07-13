@@ -43,13 +43,12 @@ a {
   text-decoration: none;
 }
 
-.navigation-item-link:visited {
-  color: #ffffff;
+.purple-color {
+  color: var(--purple-color);
 }
 
-a.navigation-item-link:hover {
-  transition: 0.3s;
-  color: var(--blue-color);
+.navigation-item-link:visited {
+  color: #ffffff;
 }
 
 ul {
@@ -74,7 +73,7 @@ h2 {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 56px 20px;
+  padding: 56px 50px;
   width: 90%;
   font-size: 1.5em;
   background-color: #000000;
@@ -96,6 +95,11 @@ nav {
   position: relative;
   display: block;
   color: #ffffff;
+  transition: all 0.4s linear;
+}
+
+.navigation-item a:hover {
+  color: var(--purple-color);
 }
 
 .navigation-item a:after {
@@ -148,7 +152,7 @@ nav {
   display: flex;
   flex-direction: column;
   width: 45%;
-  padding: 10px 20px;
+  padding: 10px 50px;
 }
 
 /*circles*/
@@ -206,21 +210,16 @@ nav {
 .about-me-left,
 .about-me-right {
   width: 50%;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 50px;
 }
 
 .about-me-left span {
   text-align: center;
-  color: var(--purple-color);
 }
 
 .about-me-right img {
   width: 100%;
   height: auto;
-}
-
-main {
-  padding-top: 50px;
 }
 
 /*expirience section*/
@@ -232,6 +231,7 @@ main {
 
 .experience-title {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .experience-container {
@@ -259,6 +259,32 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.job-bg {
+  background-repeat: no-repeat;
+  background-size: 30%;
+}
+
+.job-armed-forces {
+  background-image: url('imgs/static_circle.svg');
+  background-position: bottom right;
+}
+
+.job-playtech {
+  background-image: url('imgs/static_circle_1.svg');
+  background-position: bottom right;
+}
+
+.job-infopulse {
+  background-image: url('imgs/static_circle_2.svg');
+  background-position: top left;
+}
+
+.job-energy-soft {
+  background-image: url('imgs/static_circle.svg');
+  background-position: bottom right;
+}
+
 .company {
   display: flex;
   flex-direction: column;
