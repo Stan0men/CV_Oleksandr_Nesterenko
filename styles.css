@@ -27,6 +27,7 @@ html {
   --grey-color: #f5f5f5;
   --grey-color-2: #868684;
   --purple-color: #af9fff;
+  --dark-color: #1c1c1c;
 }
 
 body {
@@ -56,7 +57,7 @@ ul {
 }
 
 .title {
-  background-color: #000000;
+  background-color: var(--dark-color);
   position: relative;
 }
 
@@ -76,7 +77,7 @@ nav {
   padding: 56px 50px;
   width: 90%;
   font-size: 1.5em;
-  background-color: #000000;
+  background-color: var(--dark-color);
   color: #ffffff;
 }
 
@@ -102,32 +103,6 @@ nav {
   color: var(--purple-color);
 }
 
-.navigation-item a:after {
-  position: absolute;
-  top: 120%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--blue-color);
-  content: '';
-  opacity: 0;
-  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-  transition: height 0.3s, opacity 0.3s, transform 0.3s;
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  transform: translateY(-10px);
-}
-
-.navigation-item a:hover:after,
-.navigation-item a:focus:after {
-  height: 3px;
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  transform: translateY(0px);
-}
-
 .navigation-item:last-child {
   margin-right: 0;
 }
@@ -140,7 +115,7 @@ nav {
 .about-me-second {
   width: 100%;
   margin: 0 auto;
-  background-color: #000000;
+  background-color: var(--dark-color);
   color: #ffffff;
 }
 
@@ -157,7 +132,7 @@ nav {
 
 /*circles*/
 
-#circles {
+#circles-top {
   position: absolute;
   top: 30%;
   right: 0;
@@ -166,7 +141,7 @@ nav {
   overflow: hidden;
 }
 
-.circle {
+.circle-top {
   width: 200px;
   height: 200px;
   top: 0;
@@ -179,7 +154,7 @@ nav {
   transform: rotate(180deg);
 }
 
-/* Animation for rotating the circle */
+/* Animation for rotating the circle-top */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -198,7 +173,7 @@ nav {
 .about-me-second {
   display: flex;
   background-color: #ffffff;
-  color: #000000;
+  color: var(--dark-color);
 }
 
 .about-me-left {
@@ -267,7 +242,7 @@ nav {
 
 .job-armed-forces {
   background-image: url('imgs/static_circle.svg');
-  background-position: bottom right;
+  background-position: bottom center;
 }
 
 .job-playtech {
@@ -356,6 +331,10 @@ nav {
   padding: 60px 0;
 }
 
+.skills-wrapper h2 {
+  text-align: center;
+}
+
 .skills-container-item {
   display: flex;
   flex-direction: column;
@@ -419,12 +398,15 @@ nav {
 /*education*/
 .education {
   padding: 60px 0;
+  background-color: var(--dark-color);
+  color: #ffffff;
 }
 
 .education-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 90%;
   margin: 0 auto;
 }
@@ -439,7 +421,10 @@ nav {
 .education-container-left {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 48%;
+  border: 3px dashed var(--purple-color);
+  border-radius: 15px;
+  padding: 20px;
 }
 
 .education-container-right {
@@ -484,8 +469,9 @@ nav {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
   padding: 60px 0;
+  background-color: var(--purple-color);
+  text-align: center;
 }
 
 .contacts-container {
@@ -493,17 +479,20 @@ nav {
   width: 90%;
   margin: 0 auto;
   padding: 60px 0;
+  flex-direction: column;
+  font-size: 24px;
 }
 
 .contacts-container-left {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
-.contacts-container-left h3 {
-  font-size: 30px;
-  margin-bottom: 10px;
+.contacts-container-left h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  color: var(--dark-color);
 }
 
 .contacts-container-left p {
@@ -512,7 +501,6 @@ nav {
 
 .contacts-container-right {
   display: flex;
-  width: 50%;
 }
 
 .contacts-container-right-first,
@@ -523,7 +511,6 @@ nav {
   margin-bottom: 10px;
 }
 .contacts-title {
-  color: #868684;
   font-size: 12px;
   margin-bottom: 10px;
 }
@@ -534,19 +521,16 @@ nav {
   margin-bottom: 8px;
 }
 
-.contacts-email a {
+.contacts-email a,
+.contacts-phone a {
   color: #ffffff;
 }
 
 .contacts-social-link:hover,
-.contacts-email a:hover {
-  color: var(--blue-color);
-  transition: 0.3s;
-}
-
-.contacts-slogan {
-  text-align: center;
-  color: var(--blue-color);
+.contacts-email a:hover,
+.contacts-phone a:hover {
+  color: var(--dark-color);
+  transition: 0.4s;
 }
 
 /*to the top button*/
@@ -651,7 +635,7 @@ nav {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #333;
+    background-color: var(--dark-color);
     margin-bottom: 5px;
     transition: background-color 0.3s ease-in-out;
   }
@@ -665,7 +649,7 @@ nav {
   }
 
   header {
-    color: #000000;
+    color: var(--dark-color) 00;
     padding: 10px;
   }
 
@@ -684,7 +668,7 @@ nav {
   .bar {
     width: 25px;
     height: 3px;
-    background-color: #000000;
+    background-color: var(--dark-color);
     margin: 3px 0;
   }
 
