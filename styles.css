@@ -415,6 +415,7 @@ nav {
   display: block;
   width: 100%;
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .education-container-right,
@@ -554,6 +555,10 @@ nav {
 /* mobile */
 
 @media screen and (max-width: 768px) {
+  /* * {
+    outline: 1px solid red;
+  } */
+
   .close-btn {
     position: absolute;
     top: 10px;
@@ -702,7 +707,7 @@ nav {
   }
 
   nav {
-    margin: 40px auto 0;
+    display: none;
   }
 
   h2 {
@@ -724,6 +729,11 @@ nav {
   .about-me-container {
     padding: 0;
     text-align: center;
+    width: 100%;
+  }
+
+  .about-me-container > h1 {
+    font-size: 24px;
   }
 
   .about-me-text-left {
@@ -731,11 +741,17 @@ nav {
     margin-bottom: 20px;
   }
 
+  #circles-top {
+    display: none;
+  }
+
   .about-me-container,
   .experience-container,
   .projects-container,
   .education-container,
-  .contacts-container {
+  .contacts-container,
+  .about-me-second,
+  .experience {
     flex-direction: column;
   }
 
@@ -743,8 +759,25 @@ nav {
   .skills-wrapper,
   .projects,
   .contacts,
-  .contacts-container {
-    padding: 20px 0;
+  .contacts-container,
+  .about-me-second,
+  .experience {
+    padding: 20px 20px;
+  }
+
+  .about-me-left,
+  .about-me-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-me-left {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    padding: 0;
   }
 
   .projects {
@@ -766,16 +799,8 @@ nav {
     padding: 20px 0;
   }
 
-  .experience {
-    padding: 0 0 20px 0;
-  }
-
   .experience-container-left {
     margin-bottom: 40px;
-  }
-
-  .skills-container-item {
-    width: 100%;
   }
 
   .skills-container {
@@ -783,9 +808,16 @@ nav {
     flex-wrap: wrap;
   }
 
-  .skills-container > div {
-    flex: 50%;
-    margin-bottom: 10px;
+  .skills-container > div:nth-last-child(1) {
+    width: 100%;
+  }
+
+  .skills-container-item {
+    width: 50%;
+  }
+
+  .skills-container-item span {
+    font-size: 20px;
   }
 
   .projects-container-item {
@@ -797,32 +829,51 @@ nav {
     margin-bottom: 20px;
   }
 
-  .education-container-right {
-    padding-left: 0;
-  }
-
   .education-container-left,
   .education-container-right {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .education-container-text {
+    margin-bottom: 20px;
   }
 
   .education-container-text-title {
     font-size: 22px;
   }
 
+  .education-container-img {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contacts-container {
+    padding: 0;
+  }
+
   .contacts-container-right {
     width: 100%;
+    flex-direction: column;
   }
 
   .contacts-container-left {
     width: 100%;
     text-align: center;
-    margin-bottom: 40px;
+  }
+
+  .contacts-container-left h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
   .contacts-container-right-first,
   .contacts-container-right-second {
     text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .back-to-top {
@@ -832,7 +883,8 @@ nav {
 
 /*
 To do:
--add hover effect for project links
--gradient color when user scrolling down?
+-add back to top button
+-add mobile burger menu
+-scrolling down animation?
 -test on different browsers
 */
