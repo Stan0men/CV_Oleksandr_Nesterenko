@@ -604,16 +604,24 @@ ul {
 
 .skill-icon--html {
   background: #2b1812;
+  color: #fff;
 }
 
 .skill-icon--css {
   background: #122033;
+  color: #fff;
 }
 
 .skill-icon--html svg,
 .skill-icon--css svg {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
+}
+
+.skill-icon__frame {
+  fill: none;
+  stroke: rgba(158, 201, 255, 0.42);
+  stroke-width: 0.7;
 }
 
 .skill-icon--react {
@@ -668,6 +676,11 @@ ul {
 .skill-chip text {
   fill: currentColor;
   font-family: var(--font);
+}
+
+.skill-chip .skill-icon--html text,
+.skill-chip .skill-icon--css text {
+  fill: #fff;
 }
 
 .skill-chip:hover,
