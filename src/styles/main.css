@@ -171,15 +171,14 @@ ul {
   position: relative;
   overflow: hidden;
   background: var(--bg-dark);
-  min-height: min(92vh, 52rem);
 }
 
 .hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(4rem, 10vw, 8rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(4rem, 8vw, 6.5rem);
 }
 
 .hero__nav {
@@ -241,6 +240,7 @@ ul {
 
 .rings {
   position: absolute;
+  z-index: 0;
   pointer-events: none;
   aspect-ratio: 1;
 }
@@ -248,36 +248,36 @@ ul {
 .rings span {
   position: absolute;
   inset: 0;
-  border: 14px solid var(--accent);
+  border: 18px solid var(--accent);
   border-radius: 50%;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .rings span:nth-child(2) {
-  inset: 12%;
-  border-width: 13px;
+  inset: 16%;
+  border-width: 16px;
 }
 
 .rings span:nth-child(3) {
-  inset: 24%;
-  border-width: 12px;
+  inset: 32%;
+  border-width: 15px;
 }
 
 .rings span:nth-child(4) {
-  inset: 36%;
-  border-width: 11px;
+  inset: 40%;
+  border-width: 13px;
 }
 
 .rings--hero {
-  width: min(46vw, 34rem);
-  top: 8%;
-  right: -8%;
+  width: min(42vw, 32rem);
+  top: 18%;
+  right: -9%;
 }
 
 .rings--hire {
-  width: min(38vw, 26rem);
+  width: min(40vw, 28rem);
   top: 50%;
-  right: -6%;
+  right: -8%;
   transform: translateY(-50%);
 }
 
@@ -376,29 +376,29 @@ ul {
 .job-card::after {
   content: '';
   position: absolute;
-  inset: auto 0 0 auto;
-  width: 11rem;
-  height: 11rem;
+  width: 12.5rem;
+  height: 12.5rem;
   pointer-events: none;
-  opacity: 0.18;
-  background: radial-gradient(circle, transparent 42%, #1c1c1c 43%, #1c1c1c 58%, transparent 59%);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .job-card--arcs::after {
-  right: -1.5rem;
-  bottom: -1.5rem;
+  right: -1.25rem;
+  bottom: -1.25rem;
+  background-image: url('../../public/imgs/static_circle_1.svg');
 }
 
 .job-card--rings::after {
   left: -2rem;
   top: -2rem;
-  right: auto;
-  bottom: auto;
+  background-image: url('../../public/imgs/static_circle_2.svg');
 }
 
 .job-card--core::after {
   right: -1rem;
-  bottom: -2rem;
+  bottom: -1.5rem;
+  background-image: url('../../public/imgs/static_circle.svg');
 }
 
 .job-card__block {
@@ -553,7 +553,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 16rem;
+  min-height: 18.5rem;
   padding: 1.5rem 1.6rem 1.25rem;
   border-radius: var(--radius);
   color: var(--text-dark);
@@ -693,6 +693,7 @@ ul {
 .contacts a {
   text-decoration: underline;
   text-underline-offset: 3px;
+  overflow-wrap: anywhere;
 }
 
 .contacts a:hover {
@@ -726,7 +727,11 @@ ul {
   border-radius: 50%;
   background: var(--accent);
   color: var(--text-dark);
-  font-size: 1.1rem;
+}
+
+.back-to-top svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .back-to-top.is-visible {
@@ -734,6 +739,10 @@ ul {
 }
 
 @media (max-width: 960px) {
+  html {
+    scroll-padding-top: 4.25rem;
+  }
+
   .hero__nav {
     display: none;
   }
@@ -773,6 +782,11 @@ ul {
     flex-direction: column;
     gap: 1.25rem;
     font-size: 1.4rem;
+  }
+
+  .mobile-menu__nav a:hover,
+  .mobile-menu__nav a:focus-visible {
+    color: var(--accent);
   }
 
   .about,
