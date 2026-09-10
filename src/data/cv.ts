@@ -28,7 +28,6 @@ export interface CvData {
   readonly location: string;
   readonly email: string;
   readonly telegram: string;
-  readonly whatsapp: string;
   readonly linkedin: string;
   readonly github: string;
   readonly summary: readonly string[];
@@ -51,7 +50,6 @@ export const cv: CvData = {
   location: 'Nicosia, Cyprus',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
-  whatsapp: 'https://wa.me/380667145684',
   linkedin: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
   github: 'https://github.com/Stan0men',
   summary: [
@@ -59,7 +57,7 @@ export const cv: CvData = {
     'Experienced in working with complex, legacy-heavy products and improving their stability, performance, and user experience.',
   ],
   about:
-    'I have worked as a frontend developer for more than 5 years, building high-load web applications with React, JavaScript, and TypeScript. I focus on rendering performance, scalable UI architecture, and staying current with modern web technologies. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure.',
+    'I have worked as a frontend developer for 5+ years, building high-load web applications with React, JavaScript, and TypeScript. I focus on rendering performance, scalable UI architecture, and staying current with modern web technologies. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure.',
   skills: [
     {
       title: 'Core',
@@ -169,7 +167,7 @@ export function toJsonLd(data: CvData): string {
       addressCountry: 'CY',
     },
     url: data.github,
-    sameAs: [data.linkedin, data.telegram, data.whatsapp, data.github],
+    sameAs: [data.linkedin, data.telegram, data.github],
     knowsAbout: data.skills.flatMap((group) => group.items),
   };
 

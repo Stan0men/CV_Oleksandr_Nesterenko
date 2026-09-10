@@ -1,22 +1,22 @@
-# Oleksandr Nesterenko — CV
+# Oleksandr Nesterenko — Frontend Developer
 
-Frontend Developer CV site, restyled to the dark **Desktop-2** Figma and rebuilt as a Vite + TypeScript static project.
+CV of **Oleksandr Nesterenko**, a Frontend Developer based in Nicosia, Cyprus. I build high-load web interfaces with React and TypeScript, with experience at Playtech and Infopulse Ukraine.
 
-Live: [stan0men.github.io/CV_Oleksandr_Nesterenko](https://stan0men.github.io/CV_Oleksandr_Nesterenko/)
+**Live site:** [stan0men.github.io/CV_Oleksandr_Nesterenko](https://stan0men.github.io/CV_Oleksandr_Nesterenko/)
+
+Open that link in a browser — no login required.
 
 ## Stack
 
-- Vite 7 + TypeScript (strict)
-- Semantic HTML, vanilla TS for menu / JSON-LD / back-to-top
-- Static `npm run build` output in `dist/`
+- React, TypeScript, JavaScript (ES6+)
+- HTML5, CSS3 / SCSS
+- Vite 7 + TypeScript for this site (semantic HTML, vanilla TS for menu and JSON-LD)
 
-## Scripts
+## Run locally (optional)
 
 ```bash
 npm install
-npm run dev      # local dev server
-npm run build    # typecheck + production build
-npm run preview  # serve dist/
+npm run dev
 ```
 
-GitHub Pages deploys from `dist/` via `.github/workflows/pages.yml` (set the repo Pages source to **GitHub Actions**).
+`npm run build` typechecks and writes a static `dist/` folder. GitHub Pages deploys from `dist/` via `.github/workflows/pages.yml` (repo Pages source: **GitHub Actions**).
