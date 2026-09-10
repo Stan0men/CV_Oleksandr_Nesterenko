@@ -207,13 +207,15 @@ ul {
 
 .hero__links a {
   color: var(--text-light);
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.28s ease, opacity 0.28s ease, text-decoration-color 0.28s ease;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.35em;
 }
 
 .hero__links a:hover {
   color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 0.35em;
+  text-decoration-color: var(--accent);
 }
 
 .hero__copy {
@@ -303,40 +305,51 @@ ul {
   opacity: 0.7;
 }
 
+/* Same 50% offset as hero: geometric center on the card corner, ~¼ arc visible. */
 .rings--job {
-  width: 15rem;
-  right: 0;
-  bottom: 0;
-  transform: translate(42%, 42%);
+  --job-ring: 20rem;
+  width: var(--job-ring);
+  height: var(--job-ring);
+  top: auto;
+  left: auto;
+  right: calc(var(--job-ring) / -2);
+  bottom: calc(var(--job-ring) / -2);
+  transform: none;
+}
+
+.job-card--arcs .rings--job,
+.job-card--core .rings--job {
+  top: auto;
+  left: auto;
+  right: calc(var(--job-ring) / -2);
+  bottom: calc(var(--job-ring) / -2);
+  transform: none;
 }
 
 .job-card--rings .rings--job {
   right: auto;
-  left: 0;
   bottom: auto;
-  top: 0;
-  transform: translate(-42%, -42%);
-}
-
-.job-card--core .rings--job {
-  right: 0;
-  bottom: 0;
-  transform: translate(38%, 46%);
+  left: calc(var(--job-ring) / -2);
+  top: calc(var(--job-ring) / -2);
+  transform: none;
 }
 
 .rings--job span {
-  border-color: rgba(28, 28, 28, 0.28);
-  border-width: 10px;
-  opacity: 1;
+  border-color: rgba(28, 28, 28, 0.38);
+  border-width: 3px;
+  opacity: 0.85;
 }
 
 .rings--job span:nth-child(2) {
-  border-width: 8px;
+  inset: 16%;
+  border-width: 2.5px;
+  opacity: 0.7;
 }
 
 .rings--job span:nth-child(3) {
-  inset: 34%;
-  border-width: 7px;
+  inset: 32%;
+  border-width: 2.5px;
+  opacity: 0.6;
 }
 
 @keyframes ring-spin {
@@ -437,6 +450,8 @@ ul {
 .job-card {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  contain: paint;
   background: var(--accent);
   color: var(--text-dark);
   border-radius: var(--radius);
@@ -588,13 +603,17 @@ ul {
 }
 
 .skill-icon--html {
-  background: #e34f26;
-  color: #fff;
+  background: #2b1812;
 }
 
 .skill-icon--css {
-  background: #1572b6;
-  color: #fff;
+  background: #122033;
+}
+
+.skill-icon--html svg,
+.skill-icon--css svg {
+  width: 28px;
+  height: 28px;
 }
 
 .skill-icon--react {
@@ -719,7 +738,7 @@ ul {
   color: var(--text-dark);
   border-radius: 0.7rem;
   font-weight: 500;
-  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.28s ease, filter 0.28s ease, box-shadow 0.28s ease;
 }
 
 .btn:hover {
@@ -744,7 +763,7 @@ ul {
   padding: 1.4rem 1.5rem 1.15rem;
   border-radius: var(--radius);
   color: var(--text-dark);
-  transition: transform 0.2s ease;
+  transition: transform 0.28s ease, filter 0.28s ease;
   grid-column: span 6;
 }
 
@@ -865,46 +884,61 @@ ul {
   letter-spacing: -0.03em;
   line-height: 0.95;
   margin-bottom: clamp(2rem, 4vw, 3rem);
-  max-width: 18ch;
+  max-width: 14ch;
+  color: var(--text-dark);
 }
 
 .contacts__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-  font-size: 1.05rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.5rem 1.25rem;
+  font-size: 1.08rem;
 }
 
 .contacts__label {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  opacity: 0.7;
+  margin-bottom: 0.45rem;
+  color: rgba(28, 28, 28, 0.55);
+  font-weight: 500;
+}
+
+.contacts__value {
+  color: #fff;
+  font-weight: 500;
 }
 
 .contacts a {
+  color: #fff;
   text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.55);
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
-  transition: color 0.2s ease, opacity 0.2s ease, text-underline-offset 0.2s ease;
+  font-weight: 500;
+  transition:
+    color 0.28s ease,
+    opacity 0.28s ease,
+    text-decoration-color 0.28s ease,
+    text-underline-offset 0.28s ease;
 }
 
 .contacts a:hover {
-  color: var(--bg-light);
+  color: var(--text-dark);
+  text-decoration-color: var(--text-dark);
   text-underline-offset: 5px;
 }
 
 .contacts__social {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .contacts__note {
   margin-top: 3rem;
   font-size: 0.9rem;
-  opacity: 0.8;
+  color: rgba(28, 28, 28, 0.62);
   text-align: center;
   width: 100%;
 }
@@ -1078,6 +1112,28 @@ ul {
   .hero__inner {
     padding-top: 2.5rem;
   }
+
+  .skills__group {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .skills__group h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .skills__group ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .skill-chip {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1088,6 +1144,10 @@ ul {
 
   .project-card {
     min-height: 12rem;
+  }
+
+  .skills__group ul {
+    grid-template-columns: 1fr;
   }
 
   .back-to-top {

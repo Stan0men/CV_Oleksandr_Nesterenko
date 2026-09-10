@@ -51,7 +51,7 @@ export const cv: CvData = {
   location: 'Nicosia, Cyprus',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
-  whatsapp: 'https://t.me/Stan0men',
+  whatsapp: 'https://wa.me/380667145684',
   linkedin: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
   github: 'https://github.com/Stan0men',
   summary: [
@@ -169,7 +169,7 @@ export function toJsonLd(data: CvData): string {
       addressCountry: 'CY',
     },
     url: data.github,
-    sameAs: [data.linkedin, data.telegram, data.github],
+    sameAs: [data.linkedin, data.telegram, data.whatsapp, data.github],
     knowsAbout: data.skills.flatMap((group) => group.items),
   };
 
