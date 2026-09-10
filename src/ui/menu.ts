@@ -35,6 +35,12 @@ export function initMobileMenu(): void {
     link.addEventListener('click', () => setOpen(false, false));
   });
 
+  menu.addEventListener('click', (event: MouseEvent) => {
+    if (event.target === menu) {
+      setOpen(false);
+    }
+  });
+
   document.addEventListener('keydown', (event: KeyboardEvent) => {
     if (event.key === 'Escape' && menu.classList.contains(OPEN_CLASS)) {
       setOpen(false);
