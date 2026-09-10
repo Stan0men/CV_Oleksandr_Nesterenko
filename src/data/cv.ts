@@ -8,8 +8,7 @@ export interface ExperienceRole {
   readonly role: string;
   readonly period: string;
   readonly techStack: string;
-  readonly responsibilities: string;
-  readonly achievements?: readonly string[];
+  readonly bullets: readonly string[];
   readonly note?: string;
   readonly decoration: 'arcs' | 'rings' | 'core';
 }
@@ -22,13 +21,22 @@ export interface Project {
   readonly href?: string;
 }
 
+export interface ContactCard {
+  readonly label: string;
+  readonly href: string;
+  readonly display: string;
+  readonly external: boolean;
+}
+
 export interface CvData {
   readonly name: string;
   readonly role: string;
   readonly location: string;
   readonly email: string;
   readonly telegram: string;
+  readonly telegramHandle: string;
   readonly whatsapp: string;
+  readonly whatsappHandle: string;
   readonly linkedin: string;
   readonly github: string;
   readonly summary: readonly string[];
@@ -43,6 +51,7 @@ export interface CvData {
     readonly city: string;
   };
   readonly languages: readonly { readonly name: string; readonly level: string }[];
+  readonly contactCards: readonly ContactCard[];
 }
 
 export const cv: CvData = {
@@ -51,45 +60,53 @@ export const cv: CvData = {
   location: 'Nicosia, Cyprus',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
+  telegramHandle: '@Stan0men',
+  // Deep link only — never render the digits as visible page text.
   whatsapp: 'https://wa.me/380667145684',
+  whatsappHandle: '@Stan0men',
   linkedin: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
   github: 'https://github.com/Stan0men',
   summary: [
-    'Frontend Developer with 5+ years of experience building high-load web applications using React and the modern JavaScript/TypeScript ecosystem. Strong focus on performance optimization, scalable architecture, and maintainable UI systems.',
-    'Experienced in working with complex, legacy-heavy products and improving their stability, performance, and user experience.',
+    'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Experienced in delivering performance-critical frontend systems in fast-paced environments, including complex gambling platforms and enterprise web products.',
+    'Proven impact in reducing production issues by 10% through legacy codebase refactoring, achieving a stable 60 FPS rendering experience by migrating to react-virtuoso, and accelerating daily development workflows by an estimated 20-30% using AI-assisted tools (GitHub Copilot, Cursor). Strong focus on performance optimization, UI architecture, and maintainable code.',
   ],
   about:
-    'I have worked as a frontend developer for more than 5 years, building high-load web applications with React, JavaScript, and TypeScript. I focus on rendering performance, scalable UI architecture, and staying current with modern web technologies. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure.',
+    'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure.',
   skills: [
     {
-      title: 'Core',
-      items: ['JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3/SCSS'],
+      title: 'Frontend',
+      items: ['React.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3/SCSS'],
     },
     {
-      title: 'Frameworks / Libraries',
-      items: ['React.js', 'Redux Toolkit'],
+      title: 'State Management',
+      items: ['Redux Toolkit'],
     },
     {
-      title: 'Tools',
-      items: ['Webpack', 'Git', 'Jenkins', 'Gulp', 'Jest', 'Copilot', 'Cursor'],
+      title: 'UI & Styling',
+      items: ['Responsive Design', 'BEM', 'Tailwind CSS'],
     },
     {
-      title: 'Architecture',
-      items: ['Responsive Design', 'BEM', 'Tailwind'],
+      title: 'AI & Productivity',
+      items: ['GitHub Copilot', 'Cursor'],
+    },
+    {
+      title: 'Tools & Testing',
+      items: ['Webpack', 'Git', 'Jenkins', 'Gulp', 'Jest'],
     },
   ],
   experience: [
     {
       company: 'Playtech',
-      role: 'Middle Frontend Developer',
+      role: 'Frontend Developer',
       period: 'May 2021 – April 2026',
-      techStack: 'React, JavaScript, TypeScript, HTML5, CSS/SCSS, Jenkins',
-      responsibilities:
-        'Developed and maintained high-load gambling web applications. Built performance-sensitive UI with a focus on rendering efficiency, optimized re-renders and frame rates, and collaborated with design, backend, and QA. Improved legacy code quality and resolved production issues.',
-      achievements: [
-        'Reduced production issues by ~10% by improving debugging and stabilizing legacy code',
-        'Improved frontend performance in high-load scenarios through render optimization',
-        'Contributed to UI/UX improvements in complex product flows',
+      techStack: 'React, TypeScript, HTML5, CSS/SCSS, Jenkins',
+      bullets: [
+        'Developed and maintained high-load gambling web applications using React and TypeScript, delivering stable and scalable UI for complex, performance-sensitive gaming flows.',
+        'Replaced the deprecated react-virtualized library with react-virtuoso to handle massive data lists, which achieved a stable 60 FPS scrolling experience, completely eliminated UI lag, and significantly reduced memory footprint.',
+        'Integrated AI-assisted development tools (GitHub Copilot, Cursor) into the daily workflow, accelerating boilerplate generation, code refactoring, and debugging processes by an estimated 20-30%.',
+        'Investigated and resolved production issues while refactoring legacy codebases, successfully reducing production bugs by 10% and improving long-term application stability.',
+        'Profiled and optimized component re-rendering strategies across high-load scenarios, improving UI responsiveness and frame rates during peak user traffic.',
+        'Collaborated with cross-functional teams (design, backend, QA) to redesign core product flows, enhancing user engagement and overall UI/UX quality.',
       ],
       note: 'From September 2022 to September 2025, remained officially employed while serving in the Armed Forces of Ukraine.',
       decoration: 'arcs',
@@ -99,17 +116,21 @@ export const cv: CvData = {
       role: 'Frontend Developer',
       period: 'October 2019 – March 2021',
       techStack: 'HTML5, CSS3, Vanilla JS, DX8, Adaptive design',
-      responsibilities:
-        'Delivered 10+ web applications and landing pages for international pharmaceutical clients. Ensured cross-browser compatibility and mobile-first responsiveness, with Lighthouse scores of 90+ for performance, UX, and SEO.',
+      bullets: [
+        'Successfully delivered over 10+ web applications and landing pages for international pharmaceutical clients.',
+        'Achieved consistently high performance and SEO metrics (90+ Lighthouse scores).',
+      ],
       decoration: 'rings',
     },
     {
       company: 'Energy Soft',
       role: 'Frontend Developer',
       period: 'February 2019 – August 2019',
-      techStack: 'HTML5, CSS3, SCSS, Angular 6, Bootstrap',
-      responsibilities:
-        'Created user-friendly UIs and responsive designs for 13+ projects, including landing pages and web applications built with Angular 6 and SCSS.',
+      techStack: 'HTML5, CSS3, SCSS, Angular 6',
+      bullets: [
+        'Responsible for creating user-friendly UIs and responsive designs for 13+ projects.',
+        'Developed landing pages and web applications using Angular 6 and SCSS.',
+      ],
       decoration: 'core',
     },
   ],
@@ -145,14 +166,34 @@ export const cv: CvData = {
     },
   ],
   education: {
-    degree: 'Specialist Degree, Energy Faculty',
+    degree: 'Specialist Degree in Energy Faculty',
     school: 'National University of Food Technologies',
     year: '2011',
     city: 'Kyiv',
   },
   languages: [
-    { name: 'English', level: 'Upper Intermediate (B2)' },
+    { name: 'English', level: 'Upper-Intermediate (B2)' },
     { name: 'Ukrainian', level: 'Native' },
+  ],
+  contactCards: [
+    {
+      label: 'Email',
+      href: 'mailto:stan0men@yahoo.com',
+      display: 'stan0men@yahoo.com',
+      external: false,
+    },
+    {
+      label: 'WhatsApp',
+      href: 'https://wa.me/380667145684',
+      display: '@Stan0men',
+      external: true,
+    },
+    {
+      label: 'Telegram',
+      href: 'https://t.me/Stan0men',
+      display: '@Stan0men',
+      external: true,
+    },
   ],
 };
 
@@ -162,6 +203,7 @@ export function toJsonLd(data: CvData): string {
     '@type': 'Person',
     name: data.name,
     jobTitle: data.role,
+    description: data.summary.join(' '),
     email: `mailto:${data.email}`,
     address: {
       '@type': 'PostalAddress',
@@ -169,8 +211,9 @@ export function toJsonLd(data: CvData): string {
       addressCountry: 'CY',
     },
     url: data.github,
-    sameAs: [data.linkedin, data.telegram, data.whatsapp, data.github],
+    sameAs: [data.linkedin, data.telegram, data.github],
     knowsAbout: data.skills.flatMap((group) => group.items),
+    knowsLanguage: data.languages.map((language) => language.name),
   };
 
   return JSON.stringify(schema);
