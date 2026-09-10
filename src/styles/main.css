@@ -250,24 +250,28 @@ ul {
 .rings span {
   position: absolute;
   inset: 0;
-  border: 14px dashed var(--accent);
+  border: 3px dashed var(--accent);
   border-radius: 50%;
   background: transparent;
+  opacity: 0.55;
 }
 
 .rings span:nth-child(2) {
   inset: 16%;
-  border-width: 12px;
+  border-width: 2.5px;
+  opacity: 0.45;
 }
 
 .rings span:nth-child(3) {
   inset: 32%;
-  border-width: 11px;
+  border-width: 2.5px;
+  opacity: 0.4;
 }
 
 .rings span:nth-child(4) {
   inset: 46%;
-  border-width: 10px;
+  border-width: 2px;
+  opacity: 0.5;
 }
 
 .rings span:first-child,
@@ -284,17 +288,19 @@ ul {
 }
 
 .rings--hero {
-  width: min(46vw, 36rem);
-  top: 22%;
-  right: 0;
-  transform: translateX(46%);
+  width: 44rem;
+  height: 44rem;
+  top: -22rem;
+  right: -22rem;
+  opacity: 0.85;
 }
 
 .rings--hire {
-  width: min(42vw, 32rem);
-  top: 50%;
-  right: 0;
-  transform: translate(46%, -50%);
+  width: 40rem;
+  height: 40rem;
+  top: -20rem;
+  right: -20rem;
+  opacity: 0.7;
 }
 
 .rings--job {
@@ -321,6 +327,7 @@ ul {
 .rings--job span {
   border-color: rgba(28, 28, 28, 0.28);
   border-width: 10px;
+  opacity: 1;
 }
 
 .rings--job span:nth-child(2) {
@@ -348,10 +355,12 @@ ul {
 
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 22rem);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  align-items: center;
   background: var(--bg-light);
   color: var(--text-dark);
-  min-height: 28rem;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
 }
 
 .about__copy {
@@ -359,7 +368,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   gap: 1.1rem;
-  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
 }
 
 .about__title {
@@ -377,14 +385,17 @@ ul {
 }
 
 .about__photo {
-  min-height: 22rem;
+  display: flex;
+  justify-content: center;
 }
 
 .about__photo img {
-  width: 100%;
-  height: 100%;
+  width: 340px;
+  height: 340px;
+  max-width: 100%;
   object-fit: cover;
   object-position: center 18%;
+  border-radius: 50%;
 }
 
 /* Experience */
@@ -495,46 +506,144 @@ ul {
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.skills__group {
+  padding: 1.25rem 1.35rem 1.4rem;
+  border: 1px solid rgba(175, 159, 255, 0.18);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .skills__group h3 {
-  color: var(--accent);
+  color: var(--text-light);
   font-size: 1.05rem;
   font-weight: 500;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills__group h3::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .skills__group ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.65rem;
 }
 
 .skill-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.42rem 0.8rem 0.42rem 0.55rem;
-  border: 1px solid rgba(175, 159, 255, 0.45);
-  border-radius: 999px;
+  gap: 0.65rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
   font-size: 0.92rem;
   color: var(--text-light);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.25);
   cursor: default;
   transition:
     transform 0.22s ease,
     border-color 0.22s ease,
-    background-color 0.22s ease,
-    color 0.22s ease;
+    background-color 0.22s ease;
 }
 
-.skill-chip svg {
-  width: 1.15rem;
-  height: 1.15rem;
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  fill: currentColor;
+  overflow: hidden;
+}
+
+.skill-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.skill-icon--js {
+  background: #f7df1e;
+  color: #000;
+}
+
+.skill-icon--ts {
+  background: #3178c6;
+  color: #fff;
+}
+
+.skill-icon--html {
+  background: #e34f26;
+  color: #fff;
+}
+
+.skill-icon--css {
+  background: #1572b6;
+  color: #fff;
+}
+
+.skill-icon--react {
+  background: #20232a;
+}
+
+.skill-icon--redux {
+  background: #764abc;
+}
+
+.skill-icon--webpack {
+  background: #1c78c0;
+}
+
+.skill-icon--git {
+  background: #f05032;
+}
+
+.skill-icon--jenkins {
+  background: #d24939;
+}
+
+.skill-icon--gulp {
+  background: #cf4647;
+}
+
+.skill-icon--jest {
+  background: #c21325;
+}
+
+.skill-icon--copilot {
+  background: #1b1f24;
+}
+
+.skill-icon--cursor {
+  background: #111;
+}
+
+.skill-icon--responsive {
+  background: #2a2a32;
+}
+
+.skill-icon--bem {
+  background: #1c1c1c;
+  color: var(--accent);
+}
+
+.skill-icon--tailwind {
+  background: #0b1220;
 }
 
 .skill-chip text {
@@ -544,14 +653,13 @@ ul {
 
 .skill-chip:hover,
 .skill-chip:focus-visible {
-  transform: translateY(-3px) scale(1.04);
+  transform: translateY(-3px);
   border-color: var(--accent);
-  background: rgba(175, 159, 255, 0.16);
-  color: var(--accent);
+  background: rgba(175, 159, 255, 0.12);
 }
 
-.skill-chip:hover svg,
-.skill-chip:focus-visible svg {
+.skill-chip:hover .skill-icon,
+.skill-chip:focus-visible .skill-icon {
   animation: skill-wiggle 0.45s ease;
 }
 
@@ -624,20 +732,28 @@ ul {
 
 .projects__grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.25rem;
-  align-items: stretch;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.1rem;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 18.5rem;
-  padding: 1.5rem 1.6rem 1.25rem;
+  min-height: 14.5rem;
+  padding: 1.4rem 1.5rem 1.15rem;
   border-radius: var(--radius);
   color: var(--text-dark);
   transition: transform 0.2s ease;
+  grid-column: span 6;
+}
+
+.project-card--wide {
+  grid-column: span 7;
+}
+
+.project-card--narrow {
+  grid-column: span 5;
 }
 
 .project-card:hover {
@@ -650,17 +766,13 @@ ul {
 }
 
 .project-card--light {
-  background: #f4f2ff;
-}
-
-.project-card--offset {
-  margin-left: 12%;
+  background: #f7f4ff;
 }
 
 .project-card p {
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .project-card__meta {
@@ -857,12 +969,14 @@ ul {
   }
 
   .mobile-menu {
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     position: fixed;
     inset: 0;
     z-index: 40;
-    background: #161616;
-    padding: 5rem var(--pad) 2rem;
+    padding: 4.5rem 1.25rem 2rem;
+    background: rgba(8, 8, 8, 0.72);
     transform: translateX(100%);
     transition: transform 0.35s ease;
   }
@@ -871,55 +985,90 @@ ul {
     transform: translateX(0);
   }
 
+  .mobile-menu__panel {
+    position: relative;
+    width: min(100%, 26rem);
+    padding: 3.25rem 1.25rem 0.75rem;
+    border: 1px solid rgba(175, 159, 255, 0.28);
+    border-radius: 1.25rem;
+    background: #1a1a1f;
+  }
+
+  .mobile-menu__close {
+    top: 0.85rem;
+    right: 0.9rem;
+    color: var(--accent);
+  }
+
   .mobile-menu__nav {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    font-size: 1.4rem;
+    gap: 0;
+    font-size: 1.2rem;
   }
 
   .mobile-menu__nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 0.35rem;
     color: var(--text-light);
-    transition: color 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .mobile-menu__nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-menu__nav svg {
+    width: 1.45rem;
+    height: 1.45rem;
+    stroke: var(--accent);
+    fill: none;
+    flex-shrink: 0;
   }
 
   .mobile-menu__nav a:hover,
   .mobile-menu__nav a:focus-visible {
     color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
   }
 
   .about,
   .experience__row,
   .skills__grid,
-  .projects__grid,
   .education__grid,
   .contacts__grid {
     grid-template-columns: 1fr;
   }
 
-  .about__photo {
-    min-height: 18rem;
-    max-height: 26rem;
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-card--wide,
+  .project-card--narrow {
+    grid-column: auto;
+  }
+
+  .about__photo img {
+    width: 220px;
+    height: 220px;
   }
 
   .rings--hero {
-    width: min(70vw, 22rem);
-    top: 28%;
-    right: 0;
-    transform: translateX(48%);
+    width: 22rem;
+    height: 22rem;
+    top: -11rem;
+    right: -11rem;
   }
 
   .rings--hire {
-    width: min(68vw, 20rem);
-    right: 0;
-    transform: translate(48%, -50%);
-    opacity: 0.9;
-  }
-
-  .project-card--offset {
-    margin-left: 0;
+    width: 20rem;
+    height: 20rem;
+    top: -10rem;
+    right: -10rem;
   }
 
   .hero {
