@@ -151,7 +151,7 @@ export const cv: CvData = {
     city: 'Kyiv',
   },
   languages: [
-    { name: 'English', level: 'Intermediate (B2)' },
+    { name: 'English', level: 'Upper Intermediate (B2)' },
     { name: 'Ukrainian', level: 'Native' },
   ],
 };
