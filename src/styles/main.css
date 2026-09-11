@@ -36,6 +36,8 @@
   --text-light: #ffffff;
   --text-dark: #1c1c1c;
   --accent: #af9fff;
+  /* Deeper lavender so white card copy meets WCAG AA on filled cards. */
+  --accent-fill: #7460dc;
   --muted: #b3b3b1;
   --label: rgba(28, 28, 28, 0.55);
   --pad: clamp(1.25rem, 4vw, 2.5rem);
@@ -364,7 +366,7 @@ ul {
 }
 
 .rings--job span {
-  border-color: rgba(28, 28, 28, 0.38);
+  border-color: rgba(255, 255, 255, 0.42);
   border-width: 3px;
   opacity: 0.85;
 }
@@ -482,8 +484,8 @@ ul {
   overflow: hidden;
   isolation: isolate;
   contain: paint;
-  background: var(--accent);
-  color: var(--text-dark);
+  background: var(--accent-fill);
+  color: var(--text-light);
   border-radius: var(--radius);
   padding: clamp(1.25rem, 2.5vw, 1.85rem) clamp(1.25rem, 2.5vw, 2rem);
 }
@@ -501,7 +503,7 @@ ul {
 .job-card h4 {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--label);
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: 0.35rem;
 }
 
@@ -531,7 +533,7 @@ ul {
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background: var(--text-dark);
+  background: var(--text-light);
 }
 
 .job-card__note {
@@ -540,7 +542,7 @@ ul {
   margin-top: 0.4rem;
   font-size: 0.88rem;
   font-style: italic;
-  color: rgba(28, 28, 28, 0.72);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* Skills */
@@ -811,11 +813,13 @@ ul {
 }
 
 .project-card--accent {
-  background: var(--accent);
+  background: var(--accent-fill);
+  color: var(--text-light);
 }
 
 .project-card--light {
   background: #f7f4ff;
+  color: var(--text-dark);
 }
 
 .project-card p {
@@ -960,14 +964,24 @@ ul {
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 500;
   line-height: 1.35;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.22em;
   overflow-wrap: anywhere;
-  transition: opacity 0.22s ease;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
 }
 
 .contacts__card a:hover,
 .contacts__card a:focus-visible {
-  opacity: 0.72;
+  color: var(--text-dark);
+  text-decoration-color: var(--text-dark);
+}
+
+.contacts__card a:focus-visible {
+  outline-color: var(--text-dark);
 }
 
 .contacts__list {
