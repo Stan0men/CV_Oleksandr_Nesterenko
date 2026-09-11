@@ -198,13 +198,13 @@ export const cv: CvData = {
         {
           label: 'WhatsApp',
           href: 'https://wa.me/380667145684',
-          display: 'WhatsApp · @Stan0men',
+          display: 'WhatsApp',
           external: true,
         },
         {
           label: 'Telegram',
           href: 'https://t.me/Stan0men',
-          display: 'Telegram · @Stan0men',
+          display: 'Telegram',
           external: true,
         },
       ],
@@ -213,15 +213,15 @@ export const cv: CvData = {
       title: 'Social networks',
       links: [
         {
-          label: 'GitHub',
-          href: 'https://github.com/Stan0men',
-          display: 'GitHub',
-          external: true,
-        },
-        {
           label: 'LinkedIn',
           href: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
           display: 'LinkedIn',
+          external: true,
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Stan0men',
+          display: 'GitHub',
           external: true,
         },
       ],
