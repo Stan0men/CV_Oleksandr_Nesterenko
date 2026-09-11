@@ -63,8 +63,7 @@ export const cv: CvData = {
   name: 'Oleksandr Nesterenko',
   role: 'Frontend Developer',
   location: 'Nicosia, Cyprus',
-  availability:
-    'Based in Nicosia, Cyprus — open to on-site office, remote, or freelance; open to relocating for the right role (including Seoul).',
+  availability: 'Based in Nicosia, Cyprus. Open to on-site, remote, and freelance.',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
   telegramHandle: 'Telegram',
@@ -103,7 +102,7 @@ export const cv: CvData = {
     {
       company: 'Playtech',
       role: 'Frontend Developer',
-      period: 'May 2021 – April 2026',
+      period: 'May 2021 - April 2026',
       techStack: 'React, TypeScript, HTML5, CSS/SCSS, Jenkins',
       bullets: [
         'Developed and maintained high-load gambling web applications using React and TypeScript, delivering stable and scalable UI for complex, performance-sensitive gaming flows.',
@@ -119,7 +118,7 @@ export const cv: CvData = {
     {
       company: 'Infopulse Ukraine',
       role: 'Frontend Developer',
-      period: 'October 2019 – March 2021',
+      period: 'October 2019 - March 2021',
       techStack: 'HTML5, CSS3, Vanilla JS, DX8, Adaptive design',
       bullets: [
         'Successfully delivered over 10+ web applications and landing pages for international pharmaceutical clients.',
@@ -130,7 +129,7 @@ export const cv: CvData = {
     {
       company: 'Energy Soft',
       role: 'Frontend Developer',
-      period: 'February 2019 – August 2019',
+      period: 'February 2019 - August 2019',
       techStack: 'HTML5, CSS3, SCSS, Angular 6',
       bullets: [
         'Responsible for creating user-friendly UIs and responsive designs for 13+ projects.',
@@ -158,7 +157,7 @@ export const cv: CvData = {
     {
       title: 'Pharma web apps',
       summary:
-        'At Infopulse Ukraine I shipped 10+ applications and landing pages for international pharma clients — mobile-first, cross-browser, and tuned to Lighthouse 90+.',
+        'At Infopulse Ukraine I shipped 10+ applications and landing pages for international pharma clients - mobile-first, cross-browser, and tuned to Lighthouse 90+.',
       index: '03',
       tone: 'light',
     },
