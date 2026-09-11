@@ -37,6 +37,7 @@ export interface CvData {
   readonly name: string;
   readonly role: string;
   readonly location: string;
+  readonly availability: string;
   readonly email: string;
   readonly telegram: string;
   readonly telegramHandle: string;
@@ -45,7 +46,6 @@ export interface CvData {
   readonly linkedin: string;
   readonly github: string;
   readonly summary: readonly string[];
-  readonly about: string;
   readonly skills: readonly SkillGroup[];
   readonly experience: readonly ExperienceRole[];
   readonly projects: readonly Project[];
@@ -63,6 +63,7 @@ export const cv: CvData = {
   name: 'Oleksandr Nesterenko',
   role: 'Frontend Developer',
   location: 'Nicosia, Cyprus',
+  availability: 'Based in Nicosia, Cyprus. Open to on-site, remote, and freelance.',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
   telegramHandle: 'Telegram',
@@ -75,8 +76,6 @@ export const cv: CvData = {
     'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Experienced in delivering performance-critical frontend systems in fast-paced environments, including complex gambling platforms and enterprise web products.',
     'Proven impact in reducing production issues by 10% through legacy codebase refactoring, achieving a stable 60 FPS rendering experience by migrating to react-virtuoso, and accelerating daily development workflows by an estimated 20-30% using AI-assisted tools (GitHub Copilot, Cursor). Strong focus on performance optimization, UI architecture, and maintainable code.',
   ],
-  about:
-    'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure. Based in Nicosia, Cyprus — open to on-site office, remote, or freelance; open to relocating for the right role (including Seoul).',
   skills: [
     {
       title: 'Frontend',
@@ -103,7 +102,7 @@ export const cv: CvData = {
     {
       company: 'Playtech',
       role: 'Frontend Developer',
-      period: 'May 2021 – April 2026',
+      period: 'May 2021 - April 2026',
       techStack: 'React, TypeScript, HTML5, CSS/SCSS, Jenkins',
       bullets: [
         'Developed and maintained high-load gambling web applications using React and TypeScript, delivering stable and scalable UI for complex, performance-sensitive gaming flows.',
@@ -119,7 +118,7 @@ export const cv: CvData = {
     {
       company: 'Infopulse Ukraine',
       role: 'Frontend Developer',
-      period: 'October 2019 – March 2021',
+      period: 'October 2019 - March 2021',
       techStack: 'HTML5, CSS3, Vanilla JS, DX8, Adaptive design',
       bullets: [
         'Successfully delivered over 10+ web applications and landing pages for international pharmaceutical clients.',
@@ -130,7 +129,7 @@ export const cv: CvData = {
     {
       company: 'Energy Soft',
       role: 'Frontend Developer',
-      period: 'February 2019 – August 2019',
+      period: 'February 2019 - August 2019',
       techStack: 'HTML5, CSS3, SCSS, Angular 6',
       bullets: [
         'Responsible for creating user-friendly UIs and responsive designs for 13+ projects.',
@@ -158,7 +157,7 @@ export const cv: CvData = {
     {
       title: 'Pharma web apps',
       summary:
-        'At Infopulse Ukraine I shipped 10+ applications and landing pages for international pharma clients — mobile-first, cross-browser, and tuned to Lighthouse 90+.',
+        'At Infopulse Ukraine I shipped 10+ applications and landing pages for international pharma clients - mobile-first, cross-browser, and tuned to Lighthouse 90+.',
       index: '03',
       tone: 'light',
     },
@@ -235,7 +234,7 @@ export function toJsonLd(data: CvData): string {
     '@type': 'Person',
     name: data.name,
     jobTitle: data.role,
-    description: data.summary.join(' '),
+    description: `${data.summary.join(' ')} ${data.availability}`,
     email: `mailto:${data.email}`,
     address: {
       '@type': 'PostalAddress',
