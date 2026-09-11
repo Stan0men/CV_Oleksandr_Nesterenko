@@ -76,7 +76,7 @@ export const cv: CvData = {
     'Proven impact in reducing production issues by 10% through legacy codebase refactoring, achieving a stable 60 FPS rendering experience by migrating to react-virtuoso, and accelerating daily development workflows by an estimated 20-30% using AI-assisted tools (GitHub Copilot, Cursor). Strong focus on performance optimization, UI architecture, and maintainable code.',
   ],
   about:
-    'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure.',
+    'Frontend Developer with 5+ years of experience building and scaling high-load web applications using React, TypeScript, and the modern JavaScript ecosystem. Three years of military service also shaped how I work: discipline, resilience, and delivering under pressure. Based in Nicosia, Cyprus — open to on-site office, remote, or freelance; open to relocating for the right role (including Seoul).',
   skills: [
     {
       title: 'Frontend',
