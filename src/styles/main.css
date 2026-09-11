@@ -134,11 +134,16 @@ ul {
 }
 
 .hero,
-.experience,
 .skills,
-.projects,
 .education {
   background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.experience,
+.projects {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .wrap {
@@ -201,23 +206,7 @@ ul {
 .hero__inner {
   position: relative;
   z-index: 2;
-  padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(5.5rem, 11vw, 8.5rem);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  left: var(--pad);
-  right: var(--pad);
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(175, 159, 255, 0.34) 18%,
-    rgba(175, 159, 255, 0.34) 82%,
-    transparent 100%
-  );
+  padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(4.5rem, 9vw, 7rem);
 }
 
 .hero__nav {
@@ -257,19 +246,7 @@ ul {
   text-decoration-color: var(--accent);
 }
 
-.hero__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 26rem);
-  grid-template-areas:
-    'name photo'
-    'copy photo';
-  column-gap: clamp(1.5rem, 4vw, 3.5rem);
-  row-gap: clamp(1.25rem, 2.4vw, 2rem);
-  align-items: start;
-}
-
 .hero__name {
-  grid-area: name;
   display: flex;
   flex-direction: column;
   font-size: clamp(2.4rem, 7vw, 5.8rem);
@@ -277,11 +254,13 @@ ul {
   line-height: 0.92;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  margin-bottom: clamp(1.25rem, 2.4vw, 2rem);
 }
 
 .hero__copy {
-  grid-area: copy;
-  max-width: 44rem;
+  position: relative;
+  z-index: 2;
+  max-width: 42rem;
 }
 
 .hero__lead {
@@ -306,26 +285,22 @@ ul {
 }
 
 .hero__portrait {
-  grid-area: photo;
-  position: relative;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  justify-self: center;
-  align-self: center;
-  width: min(100%, 26rem);
-  aspect-ratio: 1;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  width: min(46vw, 32rem);
+  pointer-events: none;
 }
 
 .hero__portrait img {
-  position: relative;
-  z-index: 1;
-  width: min(22rem, 84%);
+  width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center 18%;
   border-radius: 50%;
+  transform: translate(24%, 22%);
 }
 
 .hero__lead strong,
@@ -381,19 +356,6 @@ ul {
 
 .rings span:last-child {
   animation: ring-spin-rev 18s linear infinite;
-}
-
-.rings--hero {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: auto;
-  left: 0;
-  opacity: 0.7;
-}
-
-.rings--hero span:nth-child(2) {
-  inset: 4%;
 }
 
 .rings--hire {
@@ -473,7 +435,11 @@ ul {
 }
 
 .experience {
-  padding-top: clamp(4.5rem, 9vw, 7.5rem);
+  padding-top: clamp(4rem, 8vw, 6.5rem);
+}
+
+.experience .experience__dates {
+  color: rgba(28, 28, 28, 0.55);
 }
 
 .experience__row {
@@ -570,7 +536,7 @@ ul {
 /* Skills */
 
 .skills {
-  padding-top: 0;
+  padding-top: clamp(3.5rem, 7vw, 6rem);
 }
 
 .skills__grid {
@@ -803,6 +769,10 @@ ul {
 
 /* Projects */
 
+.projects .section-title {
+  color: var(--text-dark);
+}
+
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -871,7 +841,7 @@ ul {
 /* Education */
 
 .education {
-  padding-top: 0;
+  padding-top: clamp(3.5rem, 7vw, 6rem);
 }
 
 .education__grid {
@@ -1145,7 +1115,6 @@ ul {
     color: var(--accent);
   }
 
-  .hero__layout,
   .experience__row,
   .skills__grid,
   .education__grid,
@@ -1170,22 +1139,19 @@ ul {
     grid-column: auto;
   }
 
-  .hero__layout {
-    grid-template-areas:
-      'name'
-      'photo'
-      'copy';
-    justify-items: center;
-  }
-
-  .hero__name,
   .hero__copy {
-    justify-self: stretch;
     max-width: none;
   }
 
   .hero__portrait {
-    width: min(16.5rem, 70vw);
+    position: relative;
+    width: min(15rem, 58vw);
+    margin: 1.75rem 0 0 auto;
+    pointer-events: none;
+  }
+
+  .hero__portrait img {
+    transform: translate(12%, 8%);
   }
 
   .rings--hire {
@@ -1227,8 +1193,7 @@ ul {
 }
 
 @media (max-width: 640px) {
-  .rings--job,
-  .rings--hero {
+  .rings--job {
     display: none;
   }
 
