@@ -38,9 +38,9 @@
   --accent: #af9fff;
   --muted: #b3b3b1;
   --label: rgba(28, 28, 28, 0.55);
-  --pad: clamp(1.25rem, 5vw, 5rem);
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
   --radius: 1.25rem;
-  --max: 90rem;
+  --max: 72.5rem;
   --font: 'Neue Haas Grotesk Display', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
@@ -119,6 +119,26 @@ ul {
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
+/* Full-bleed color bands; one shared centered content column. */
+.hero,
+.about,
+.experience,
+.skills,
+.hire,
+.projects,
+.education,
+.contacts {
+  width: 100%;
+  max-width: none;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
 /* Mobile chrome */
 
 .mobile-bar {
@@ -172,9 +192,7 @@ ul {
 .hero__inner {
   position: relative;
   z-index: 2;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(4rem, 8vw, 6.5rem);
+  padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(4rem, 8vw, 6.5rem);
 }
 
 .hero__nav {
@@ -370,13 +388,16 @@ ul {
 /* About */
 
 .about {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.about__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 22rem);
   gap: clamp(1.5rem, 5vw, 4.5rem);
   align-items: center;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
 }
 
 .about__copy {
@@ -420,9 +441,7 @@ ul {
 .skills,
 .projects,
 .education {
-  padding: clamp(3.5rem, 7vw, 6rem) var(--pad);
-  max-width: var(--max);
-  margin: 0 auto;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 
 .experience__row {
@@ -705,7 +724,7 @@ ul {
   overflow: hidden;
   background: var(--bg-light);
   color: var(--text-dark);
-  padding: clamp(4rem, 9vw, 7rem) var(--pad);
+  padding-block: clamp(4rem, 9vw, 7rem);
 }
 
 .hire__copy {
@@ -872,12 +891,7 @@ ul {
 .contacts {
   background: var(--accent);
   color: var(--text-dark);
-  padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad);
-}
-
-.contacts__inner {
-  max-width: var(--max);
-  margin: 0 auto;
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
 .contacts h2 {
@@ -897,7 +911,6 @@ ul {
   grid-template-areas: 'email messengers social';
   gap: 0.75rem 0.95rem;
   align-items: stretch;
-  max-width: 56rem;
 }
 
 .contacts__card--email {
@@ -1088,7 +1101,7 @@ ul {
     color: var(--accent);
   }
 
-  .about,
+  .about__inner,
   .experience__row,
   .skills__grid,
   .education__grid,
@@ -1101,7 +1114,6 @@ ul {
       'email'
       'messengers'
       'social';
-    max-width: none;
   }
 
   .projects__grid {
