@@ -65,10 +65,10 @@ export const cv: CvData = {
   location: 'Nicosia, Cyprus',
   email: 'stan0men@yahoo.com',
   telegram: 'https://t.me/Stan0men',
-  telegramHandle: '@Stan0men',
+  telegramHandle: 'Telegram',
   // Deep link only — never render the digits as visible page text.
   whatsapp: 'https://wa.me/380667145684',
-  whatsappHandle: '@Stan0men',
+  whatsappHandle: 'WhatsApp',
   linkedin: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
   github: 'https://github.com/Stan0men',
   summary: [
@@ -210,18 +210,18 @@ export const cv: CvData = {
       ],
     },
     {
-      title: 'Social networks',
+      title: 'Social',
       links: [
-        {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
-          display: 'LinkedIn',
-          external: true,
-        },
         {
           label: 'GitHub',
           href: 'https://github.com/Stan0men',
           display: 'GitHub',
+          external: true,
+        },
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/oleksandr-nesterenko-133b74146/',
+          display: 'LinkedIn',
           external: true,
         },
       ],

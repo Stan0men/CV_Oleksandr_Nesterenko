@@ -607,12 +607,16 @@ ul {
 
 .skill-icon--html {
   background: #e34f26;
-  color: #fff;
 }
 
 .skill-icon--css {
   background: #1572b6;
-  color: #fff;
+}
+
+.skill-icon--html svg,
+.skill-icon--css svg {
+  width: 34px;
+  height: 34px;
 }
 
 .skill-icon--react {
@@ -889,13 +893,11 @@ ul {
 
 .contacts__grid {
   display: grid;
-  grid-template-columns: minmax(15rem, 22rem) minmax(16rem, 24rem);
-  grid-template-areas:
-    'email social'
-    'messengers social';
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: 'email messengers social';
   gap: 0.75rem 0.95rem;
   align-items: stretch;
-  max-width: 48rem;
+  max-width: 56rem;
 }
 
 .contacts__card--email {
