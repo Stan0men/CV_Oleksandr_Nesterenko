@@ -960,14 +960,24 @@ ul {
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 500;
   line-height: 1.35;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.22em;
   overflow-wrap: anywhere;
-  transition: opacity 0.22s ease;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
 }
 
 .contacts__card a:hover,
 .contacts__card a:focus-visible {
-  opacity: 0.72;
+  color: var(--text-dark);
+  text-decoration-color: var(--text-dark);
+}
+
+.contacts__card a:focus-visible {
+  outline-color: var(--text-dark);
 }
 
 .contacts__list {
