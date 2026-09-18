@@ -102,8 +102,8 @@ export const cv: CvData = {
     {
       company: 'Playtech',
       role: 'Frontend Developer',
-      period: 'May 2021 - April 2026',
-      techStack: 'React, TypeScript, HTML5, CSS/SCSS, Jenkins',
+      period: 'May 2021 - August 2026',
+      techStack: 'React, TypeScript, Redux Toolkit, HTML5, CSS/SCSS, Jenkins',
       bullets: [
         'Developed and maintained high-load gambling web applications using React and TypeScript, delivering stable and scalable UI for complex, performance-sensitive gaming flows.',
         'Replaced the deprecated react-virtualized library with react-virtuoso to handle massive data lists, which achieved a stable 60 FPS scrolling experience, completely eliminated UI lag, and significantly reduced memory footprint.',
@@ -228,6 +228,52 @@ export const cv: CvData = {
   ],
 };
 
+const MONTH_INDEX: Record<string, string> = {
+  January: '01',
+  February: '02',
+  March: '03',
+  April: '04',
+  May: '05',
+  June: '06',
+  July: '07',
+  August: '08',
+  September: '09',
+  October: '10',
+  November: '11',
+  December: '12',
+};
+
+function toIsoMonth(label: string): string | undefined {
+  const match = label.trim().match(/^([A-Za-z]+)\s+(\d{4})$/);
+  if (!match) {
+    return undefined;
+  }
+
+  const month = MONTH_INDEX[match[1]];
+  if (!month) {
+    return undefined;
+  }
+
+  return `${match[2]}-${month}`;
+}
+
+function toOrganizationRole(role: ExperienceRole): Record<string, unknown> {
+  const [startLabel, endLabel] = role.period.split(' - ').map((part) => part.trim());
+  const startDate = toIsoMonth(startLabel);
+  const endDate = toIsoMonth(endLabel);
+
+  return {
+    '@type': 'OrganizationRole',
+    roleName: role.role,
+    ...(startDate ? { startDate } : {}),
+    ...(endDate ? { endDate } : {}),
+    memberOf: {
+      '@type': 'Organization',
+      name: role.company,
+    },
+  };
+}
+
 export function toJsonLd(data: CvData): string {
   const schema = {
     '@context': 'https://schema.org',
@@ -245,6 +291,7 @@ export function toJsonLd(data: CvData): string {
     sameAs: [data.linkedin, data.telegram, data.github],
     knowsAbout: data.skills.flatMap((group) => group.items),
     knowsLanguage: data.languages.map((language) => language.name),
+    memberOf: data.experience.map(toOrganizationRole),
   };
 
   return JSON.stringify(schema);
